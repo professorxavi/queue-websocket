@@ -1,11 +1,5 @@
-// const express = require('express')();
-// const http = require('http').Server(express);
 const http = require('http').createServer();
 const io = require('socket.io')(http);
-
-// express.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/index.html');
-// });
 
 io.on('connection', (socket) => {
   socket.on('add user', (msg) => {
@@ -14,8 +8,10 @@ io.on('connection', (socket) => {
   socket.on('update queue', (msg) => {
     io.emit('update queue', msg);
   });
+  socket.on('update team', (msg) => {
+    io.emit('update team', msg);
+  });
 });
 
-http.listen(3500, () => {
-  console.log('listening on *:3500');
+http.listen(4000, () => {
 });
