@@ -21,7 +21,6 @@ http.listen(4000, () => {
 });
 
 function showTeam() {
-  console.log('show the squad');
   io.emit('show team', 'things');
   setTimeout(() => {io.emit('hide team', 'things');}, 30000);
 }
