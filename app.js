@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
 });
 
 http.listen(4000, () => {
-  setInterval(() => {showTeam();}, 312427);
+  setInterval(() => {showTeam();}, 192427);
 });
 
 function showTeam() {
