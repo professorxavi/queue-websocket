@@ -14,6 +14,12 @@ io.on('connection', (socket) => {
   socket.on('show team', (msg) => {
     showTeam();
   });
+  socket.on('kill add', (msg) => {
+    io.emit('update table', msg);
+  });
+  socket.on('death added', (msg) => {
+    io.emit('update table', msg);
+  });
 });
 
 http.listen(4000, () => {
