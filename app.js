@@ -6,7 +6,7 @@ io.on('connection', (socket) => {
     io.emit('add user', msg);
   });
   socket.on('update queue', (msg) => {
-    io.emit('update queue', msg);
+    setTimeout(() => {io.emit('update queue', msg);}, 1000);
   });
   socket.on('update team', (msg) => {
     io.emit('update team', msg);
@@ -18,6 +18,9 @@ io.on('connection', (socket) => {
     io.emit('update table', msg);
   });
   socket.on('death added', (msg) => {
+    io.emit('update table', msg);
+  });
+  socket.on('evolve mon', (msg) => {
     io.emit('update table', msg);
   });
 });
