@@ -31,5 +31,5 @@ http.listen(4000, () => {
 
 function showTeam() {
   io.emit('show team', 'things');
-  setTimeout(() => {io.emit('hide team', 'things');}, 30000);
+  //setTimeout(() => {io.emit('hide team', 'things');}, 30000);
 }
